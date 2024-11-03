@@ -7,7 +7,7 @@ public class LibraryManagement {
         String command;
 
         System.out.println("Welcome to the Library Management System!");
-
+// loop for user input
         do {
             System.out.println("\nChoose an action:");
             System.out.println("1. Add a Book");
@@ -60,6 +60,7 @@ public class LibraryManagement {
                     System.out.println("Invalid choice. Please enter 1, 2, 3, 4, 5, or 6.");
                     break;
             }
+            // keep looping if close option is not selected
         } while (!command.equals("6"));
 
         scanner.close();

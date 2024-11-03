@@ -6,16 +6,16 @@ import java.io.FileWriter;
 
 public class Library {
     private ArrayList<Book> books;
-
+// book objects are sored in an array
     public Library() {
         books = new ArrayList<>();
     }
-
+// method to add book
     public void addBook(Book book) {
         books.add(book);
         System.out.println("Book added: " + book);
     }
-
+// method to remove book by title
     public void removeBook(String title) {
         boolean removed = books.removeIf(book -> book.getTitle().equalsIgnoreCase(title));
         if (removed) {
@@ -24,7 +24,7 @@ public class Library {
             System.out.println("Book not found: " + title);
         }
     }
-
+// method to dispaly books in array
     public void displayBooks() {
         if (books.isEmpty()) {
             System.out.println("No books in the library.");
@@ -35,7 +35,7 @@ public class Library {
             }
         }
     }
-
+// method to write books to a JSON file :)
     public void writeBooksToJson(String filename) {
         try (FileWriter fileWriter = new FileWriter(filename)) {
             fileWriter.write("[\n");
@@ -58,7 +58,7 @@ public class Library {
             System.out.println("An error occurred while writing to the file: " + e.getMessage());
         }
     }
-
+//  method to read books from a JSON file
     public void readBooksFromJson(String filename) {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filename))) {
             StringBuilder jsonBuilder = new StringBuilder();
